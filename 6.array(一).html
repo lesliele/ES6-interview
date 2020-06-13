@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // json数组格式 
+  let json = {
+    "0": 12,
+    "1": 45,
+    length:2
+  }
+  // 转为数组
+  console.log(Array.from(json));
+
+  // 生成数组
+  console.log(Array.of(3,4,5))
+
+  // 查找元素
+  console.log([1,2,3].find(item => item > 10)); //找不到undefined
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 全局只有一个变量i
+  // var a = [];
+  // for (var i = 0; i < 10; i++) {
+  //   a[i] = function () {
+  //     console.log(i)
+  //   }
+  // }
+  // a[6]();
+
+  // 设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。
+  // for (let i = 0; i < 3; i++) {
+  //   let i = 'avi';
+  //   console.log(i)
+  // }
+
+  // 暂时性死区
+  // var tmp = 123;
+
+  // if (true) {
+  //   tmp = 'abc'
+  //   let tmp;
+  //   console.log(tmp)
+  // }
+
+  // 块级作用域
+  // var tmp = new Date();
+
+  // function f() {
+  //   console.log(tmp)
+  //   if (false) {
+  //     var tmp = '';
+  //   }
+  // }
+  // f()
+  
+  // 必须有大括号，否则认为不存在块级作用域
+  // if (true) let a =1
+
+  // 顶层对象的属性与全局变量挂钩, 来了几个很大的问题:
+  // 1.没法在编译时就报出变量未声明的错误，只有运行时才能知道
+  // 2.不利于模块化
+</script>
+</html>
