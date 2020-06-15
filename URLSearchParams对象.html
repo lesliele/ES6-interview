@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // append(name, value):插入一个指定的键/值对作为新的搜索参数。
+  let url = new URL('https://example.com?foo=1&bar=2');
+  let params = new URLSearchParams(url.search.slice(1));
+
+  params.append('title', 'canvas');
+  console.log(params)
+  console.log(params.toString())
+  // delete(name):从搜索参数列表里删除指定的搜索参数及其对应的值。
+  // entries():返回一个iterator可以遍历所有键/值对的对象。
+  let searchParams = new URLSearchParams('name=dk&age=123');
+  for (let [key, val] of searchParams.entries()) {
+    console.log(key, val)
+  }
+  // has(name):返回 Boolean 判断是否存在此搜索参数。
+  console.log(searchParams.has('name'))
+</script>
+</html>

@@ -10,6 +10,9 @@
   
 </body>
 <script>
+  // Array.from方法用于将两类对象转为真正的数组
+  // 类似数组的对象
+  // 可遍历（iterable）的对象
   // json数组格式 
   let json = {
     "0": 12,
@@ -18,11 +21,19 @@
   }
   // 转为数组
   console.log(Array.from(json));
+  console.log(Array.from(new Set([1, 2, 3])))
+  // Array.from还可以接受第二个参数
+  console.log(Array.from([1,2,3], x => x ** x))
+  console.log(Array.from({length: 2}, () => 'jack'))
 
   // 生成数组
+  // Array.of方法用于将一组值，转换为数组。
   console.log(Array.of(3,4,5))
 
   // 查找元素
-  console.log([1,2,3].find(item => item > 10)); //找不到undefined
+  // 数组实例的find方法，用于找出第一个符合条件的数组成员。
+  console.log([1,2,3].find(item => item > 1)); //找不到undefined
+  console.log([1,2,3].findIndex(item => item > 1))
+  console.log([NaN].findIndex(y => y === NaN))
 </script>
 </html>

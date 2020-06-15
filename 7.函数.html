@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function add(a = 1, b = 2) {
+    return a + b;
+  }
+  console.log(add.length)
+
+  // 特别注意: 如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数了。
+  // 默认参数其实多用于未参数的使用，如果在其他位置使用，意义不大
+  // function add(x, y = 1, z) {
+  //   return x + y + z;
+  // }
+  function add(x, y, z = 1) {
+    return x + y + z;
+  }
+  console.log(add.length)
+
+  // 利用参数默认值，可以指定某一个参数不得省略，如果省略就抛出一个错误。
+  function throwIfMissing() {
+    throw new Error('Missing Params');
+  }
+  function foo(mustBeProvided = throwIfMissing()) {
+    return mustBeProvided;
+  }
+  console.log(foo(1))
+</script>
+</html>

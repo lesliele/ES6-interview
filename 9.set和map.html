@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // Set函数可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数，用来初始化。
+  // 去除字符串里面的重复字符
+  console.log([...new Set('abcdddddd')].join(''))
+  // 两个对象总是不相等的
+  let set = new Set();
+  set.add({});
+  console.log(set.size)
+  set.add({});
+  console.log(set.size)
+
+  // 需要特别指出的是，Set的遍历顺序就是插入顺序。
+  // 由于 Set 结构没有键名，只有键值（或者说键名和键值是同一个值），所以keys方法和values方法的行为完全一致。
+  let temp = new Set(['red', 'green', 'yellow']);
+  for (let key of temp.keys()) {
+    console.log(key); //'red', 'green', 'yellow'
+  }
+  for (let value of temp.values()) {
+    console.log(value) //'red', 'green', 'yellow'
+  }
+
+  // 改变Set的数据结构
+  let set2 = new Set([1, 2, 3]);
+  set2 = new Set([...set2].map(val => val * 2))
+  console.log(set2)
+
+  let set3= new Set([1, 2, 3])
+  set3 = new Set(Array.from(set3, item => item * 2))
+  console.log(set3)
+
+
+  // Map
+  // Map 转为数组
+  const myMap = new Map()
+    .set(true, 7)
+    .set({foo: 3}, ['abc']);
+  console.log([...myMap]);
+
+  // 对象转为 Map
+  let obj = {
+    a: 1,
+    b: 2
+  }
+  let map = new Map(Object.entries(obj))
+  console.log(map)
+
+  // weakSet
+  // WeakSet 的成员只能是对象 WeakSet 可以接受一个数组或类似数组的对象作为参数
+  // （实际上，任何具有 Iterable 接口的对象，都可以作为 WeakSet 的参数。）
+  const a = [
+    [1, 2],
+    [3, 4]
+  ]
+  const ws = new WeakSet(a)
+  console.log(ws)
+  // 数组的成员只能是对象。
+  // const b = [3, 4];
+  // const ws2 = new WeakSet(b)
+  // 如果要添加，只能使用add方法
+  const foo = {
+    a: 2
+  }
+  const ws2 = new WeakSet();
+  ws2.add(foo);
+  console.log(ws2)
+</script>
+</html>

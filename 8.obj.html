@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 属性名表达式
+  let propKey = 'name'
+  let obj = {
+    [propKey]: 'dk'
+  }
+  console.log(obj)
+
+  // 属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串[object Object]
+  // [keyA]和[keyB]得到的都是[object Object]，所以[keyB]会把[keyA]覆盖掉，而myObject最后只有一个[object Object]属性。
+  const keyA = {a: 1};
+  const keyB = {b: 2};
+  const myObject = {
+    [keyA]: 'valueA',
+    [keyB]: 'valueB'
+  }
+  console.log(myObject) //[object Object]: "valueB"
+
+  // Object.is()
+  console.log(Object.is(NaN, NaN))
+
+  // Object.keys()，Object.values()，Object.entries()
+  let {keys, values, entries} = Object;
+  let temp = {
+    a: 1,
+    b: 2
+  }
+  for (let value of values(temp)) {
+    console.log(value)
+  }
+
+  // Object.fromEntries()
+  console.log(Object.fromEntries([
+    ['foo', 123],
+    ['sex', true]
+  ]))
+  // 该方法的主要目的，是将键值对的数据结构还原为对象，因此特别适合将 Map 结构转为对象。
+  const mapRes = new Map([
+    ['name', 'leslie'],
+    ['age', 12]
+  ]);
+  console.log(Object.fromEntries(mapRes));
+
+  // 提取参数
+  console.log(Object.fromEntries(new URLSearchParams('name=dk&age=123&title=66')))
+
+</script>
+</html>

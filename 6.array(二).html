@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // let arr = ['a', 'b', 'c'];
+  // ES5的更新方式
+  // arr.splice(1, 1, 'd')
+  // console.log(arr)
+  // ES6 填充后也会改变原数组
+  // console.log(arr.fill('d', 1, 2))
+  // console.log(arr)
+
+  // for of 循环内部调用的是数据结构的Symbol.iterator方法。
+  // for...of循环调用遍历器接口，数组的遍历器接口只返回具有数字索引的属性
+  let arr = [1,2,3]
+  arr.foo = 33;
+  // for (let key in arr) {
+  //   console.log(key)
+  // }
+  for (let value of arr) {
+    console.log(value)
+  }
+
+  // entries
+  // let arr = [1,2,3]
+  // let list = arr.entries()
+  // console.log(list.next().value)
+  // console.log(list.next().value)
+  // console.log(list.next().value)
+
+  // iterator是什么，如何实现
+</script>
+</html>
