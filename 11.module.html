@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 推荐的写法
+  var a = 1;
+  var b = 2;
+  var c = 3;
+  export {
+    a,
+    b,
+    c
+  }
+
+  // 报错
+  function f() {}
+  export f;
+
+  // 正确
+  export function f() {};
+  // 实质是，在接口名与模块内部变量之间，建立了一一对应的关系
+
+  // 整体加载 
+  // 除了指定加载某个输出值，还可以使用整体加载，即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。
+
+  // circle.js
+  export function area(radius) {
+    return Math.PI * radius * radius;
+  }
+
+  export function circumference(radius) {
+    return 2 * Math.PI * radius;
+  }
+
+  // index.js
+  import * as circle from './circle';
+
+  console.log('圆面积：' + circle.area(4));
+  console.log('圆周长：' + circle.circumference(14));
+</script>
+</html>
